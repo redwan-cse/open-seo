@@ -24,19 +24,20 @@ This project is a customized, self-hosted distribution of the excellent open-sou
 ## ?? Why This Custom Edition?
 
 While upstream OpenSEO is an incredible open-source alternative to Semrush and Ahrefs, standard self-hosting still mandates third-party paid commercial APIs:
+
 1. **DataForSEO** (paid account required for search volume, organic SERP, keyword ideas, and LLM mentions).
 2. **Context.dev** (paid per-page API required to unlock the **"Render JavaScript"** toggle in Site Audits).
 
 ### Key Enhancements in this Distribution:
 
-| Capability | Upstream OpenSEO | Redwan's Custom Self-Hosted Edition |
-| :--- | :--- | :--- |
-| **Search Engine Data** | Requires paid DataForSEO API balance | **100% Self-Hosted SearXNG Cluster** (unmetered Google/Bing organic scraping) |
-| **AI LLM Visibility** | Commercial OpenRouter API keys | **Local Manifest AI Gateway** + Auto-fallback prompt relevance pipeline |
-| **JavaScript Rendering** | Requires paid Context.dev API subscription | **Local Headless Chrome Engine (`browserless/chrome`)** with zero per-page fees |
-| **Network Support** | Strict loopback / HTTPS requirements | **Full RFC1918 LAN & Private Network Access** (automatic CORS & CSRF bypass) |
-| **Lifecycle & Updates** | Manual container upgrades | **Autonomous AGY CLI Sync Watchdog** (retains self-hosted adapters across updates) |
-| **Ongoing Costs** | Monthly API billing + usage markups | **$0 / Month Ongoing API Costs** |
+| Capability               | Upstream OpenSEO                           | Redwan's Custom Self-Hosted Edition                                                |
+| :----------------------- | :----------------------------------------- | :--------------------------------------------------------------------------------- |
+| **Search Engine Data**   | Requires paid DataForSEO API balance       | **100% Self-Hosted SearXNG Cluster** (unmetered Google/Bing organic scraping)      |
+| **AI LLM Visibility**    | Commercial OpenRouter API keys             | **Local Manifest AI Gateway** + Auto-fallback prompt relevance pipeline            |
+| **JavaScript Rendering** | Requires paid Context.dev API subscription | **Local Headless Chrome Engine (`browserless/chrome`)** with zero per-page fees    |
+| **Network Support**      | Strict loopback / HTTPS requirements       | **Full RFC1918 LAN & Private Network Access** (automatic CORS & CSRF bypass)       |
+| **Lifecycle & Updates**  | Manual container upgrades                  | **Autonomous AGY CLI Sync Watchdog** (retains self-hosted adapters across updates) |
+| **Ongoing Costs**        | Monthly API billing + usage markups        | **$0 / Month Ongoing API Costs**                                                   |
 
 ---
 
@@ -77,21 +78,26 @@ While upstream OpenSEO is an incredible open-source alternative to Semrush and A
 ## ? Features & Workflows
 
 ### 1. Keyword Research & Organic SERP
+
 - Discover high-intent queries and search volumes powered by local **SearXNG** aggregation.
 - Real-time ranking previews, title tags, descriptions, and snippet extraction with zero API throttling.
 
 ### 2. AI Visibility & Prompt Research
+
 - Track how AI models (ChatGPT, Claude, Gemini, Perplexity) perceive and cite your domain.
 - Generates natural, context-aware prompt variations and brand mentions using **Manifest AI Gateway**.
 - Resilient JSON normalization and fallback heuristics to eliminate blank results or schema errors.
 
 ### 3. Site Audit with Client-Side JavaScript Execution
+
 - Full SPA crawling (React, Next.js, Vue, Angular, Svelte) via integrated **Headless Chrome**.
 - Evaluates dynamically injected headings, links, internal architectures, and Lighthouse performance scores.
 - Automatic DOM state validation (`loaded`) with direct HTML fallback resilience.
 
 ### 4. Agent Skills & MCP Integration
+
 OpenSEO exposes a native Model Context Protocol (MCP) server so autonomous coding agents can orchestrate your SEO pipeline:
+
 - Compatible with **Antigravity (AGY)**, **Claude Code**, **OpenClaw**, **Hermes**, and **Codex**.
 - Reusable agent skills for keyword auditing, content briefs, and ranking checks.
 
@@ -100,6 +106,7 @@ OpenSEO exposes a native Model Context Protocol (MCP) server so autonomous codin
 ## ??? Self-Hosting Guide
 
 ### Prerequisites
+
 - Docker Engine & Docker Compose (v2.20+)
 - 4 GB+ RAM recommended (for running the headless browser engine)
 - Linux VPS (Ubuntu 22.04 / 24.04 LTS recommended)
@@ -107,16 +114,20 @@ OpenSEO exposes a native Model Context Protocol (MCP) server so autonomous codin
 ### Quick Start
 
 1. **Clone this repository**:
+
    ```bash
    git clone git@github.com:redwan-cse/open-seo.git
    cd open-seo/deploy/standalone
    ```
 
 2. **Configure your environment**:
+
    ```bash
    cp .env.example .env
    ```
+
    Set your local keys:
+
    ```env
    AUTH_MODE=password
    BETTER_AUTH_URL=http://192.168.10.40:3009
@@ -131,6 +142,7 @@ OpenSEO exposes a native Model Context Protocol (MCP) server so autonomous codin
    ```
 
 3. **Deploy the stack**:
+
    ```bash
    docker compose up -d
    ```
