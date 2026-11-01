@@ -1,108 +1,158 @@
-# OpenSEO
+# OpenSEO (Self-Hosted Community Edition)
 
-> [!NOTE]
-> **OpenSEO Self-Hosted Community Edition** maintained by [Md. Redwan Ahmed](https://github.com/redwan-cse).  
-> **Original Upstream Project:** [every-app/open-seo](https://github.com/every-app/open-seo) created by [Ben Senescu](https://github.com/bensenescu).  
-> **License:** [MIT License](./LICENSE) ? All original copyrights, license terms, and author credits are fully preserved.  
-> 
-> **Self-Hosted Enhancements in this distribution:**
-> - **Zero-Cost DataForSEO Alternative:** Native SearXNG meta-search + Manifest AI Gateway integration (no paid DataForSEO plan needed).
-> - **Self-Hosted JavaScript Rendering:** Headless Chrome (`browserless/chrome`) for dynamic SPA site audits without third-party Context.dev API subscriptions.
-> - **Automated Upstream Sync:** Automated 3-day synchronization tracking upstream stable releases while preserving self-hosted adapters.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Customized by](https://img.shields.io/badge/Customized%20by-Md.%20Redwan%20Ahmed-green.svg)](https://github.com/redwan-cse)
+[![Upstream](https://img.shields.io/badge/Upstream-every--app%2Fopen--seo-orange.svg)](https://github.com/every-app/open-seo)
+[![Architecture](https://img.shields.io/badge/Stack-Docker%20%7C%20SearXNG%20%7C%20Browserless%20%7C%20Manifest-purple.svg)](#architecture)
+[![Autonomous Sync](https://img.shields.io/badge/Sync-AGY%20CLI%20Watchdog-brightgreen.svg)](#automated-upstream-synchronization)
 
-> Open source alternative to Semrush and Ahrefs
+> **A 100% self-hosted, unmetered, privacy-first distribution of OpenSEO.**  
+> Built and maintained by [Md. Redwan Ahmed](https://github.com/redwan-cse) based on the foundational work by [Ben Senescu](https://github.com/bensenescu) and [every-app/open-seo](https://github.com/every-app/open-seo).
 
-OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
+---
 
-> All-in-one SEO tool for you and your AI agent.
+## ?? Upstream Credits & Licensing
 
-Connect with any agent like Claude Code, OpenClaw or Hermes. We have pre-built skills, but you can build your own to tailor OpenSEO to your needs.
+This project is a customized, self-hosted distribution of the excellent open-source [OpenSEO](https://github.com/every-app/open-seo) created by **[Ben Senescu](https://github.com/bensenescu)** and the [EveryApp](https://github.com/every-app) team.
 
-<img width="100%" alt="openseo-keyword-research" src="https://github.com/user-attachments/assets/8ebdc439-3e72-41ab-8bde-8cda771ef2e8" />
+- **Original Project:** [every-app/open-seo](https://github.com/every-app/open-seo)
+- **Hosted Platform:** [openseo.so](https://openseo.so)
+- **License:** [MIT License](./LICENSE) ? All original copyrights, license terms, and author notices are strictly preserved.
 
-## Hosted Version
+---
 
-Try OpenSEO for free on our website. If you want to support the project, a hosted subscription is $10/month.
+## ?? Why This Custom Edition?
 
-[openseo.so](https://openseo.so)
+While upstream OpenSEO is an incredible open-source alternative to Semrush and Ahrefs, standard self-hosting still mandates third-party paid commercial APIs:
+1. **DataForSEO** (paid account required for search volume, organic SERP, keyword ideas, and LLM mentions).
+2. **Context.dev** (paid per-page API required to unlock the **"Render JavaScript"** toggle in Site Audits).
 
-### EveryApp
+### Key Enhancements in this Distribution:
 
-Host OpenSEO and other open source apps on our platform EveryApp.
+| Capability | Upstream OpenSEO | Redwan's Custom Self-Hosted Edition |
+| :--- | :--- | :--- |
+| **Search Engine Data** | Requires paid DataForSEO API balance | **100% Self-Hosted SearXNG Cluster** (unmetered Google/Bing organic scraping) |
+| **AI LLM Visibility** | Commercial OpenRouter API keys | **Local Manifest AI Gateway** + Auto-fallback prompt relevance pipeline |
+| **JavaScript Rendering** | Requires paid Context.dev API subscription | **Local Headless Chrome Engine (`browserless/chrome`)** with zero per-page fees |
+| **Network Support** | Strict loopback / HTTPS requirements | **Full RFC1918 LAN & Private Network Access** (automatic CORS & CSRF bypass) |
+| **Lifecycle & Updates** | Manual container upgrades | **Autonomous AGY CLI Sync Watchdog** (retains self-hosted adapters across updates) |
+| **Ongoing Costs** | Monthly API billing + usage markups | **$0 / Month Ongoing API Costs** |
 
-[Self-host on EveryApp and give it a star →](https://github.com/every-app/every-app)
+---
 
-## Why use OpenSEO?
+## ??? Architecture
 
-- Best in class MCP and AI Skills.
-- Modern, simple UI.
-  - Focused workflows instead of a bloated, complex SEO suite.
-- No subscriptions.
-  - Bring your own DataForSEO API key and pay only for what you use.
-- Fork and vibe code your own custom tool.
-
-## Main SEO Workflows
-
-- Keyword research
-- Rank tracking
-- Competitor Insights
-- Backlinks
-- Site Audits
-- AI Visibility
-
-## OpenSEO MCP & Agent Skills
-
-OpenSEO exposes an MCP server so AI agents like Claude Code, OpenClaw, and Hermes can use your SEO data directly. Agent Skills are reusable workflows that guide your agent through SEO tasks using the MCP.
-
-- [Set up ChatGPT web or desktop](https://openseo.so/docs/chatgpt) (works on Free and paid ChatGPT plans)
-- [Set up Codex](https://openseo.so/docs/codex-plugin)
-- [Set up OpenSEO MCP](https://openseo.so/docs/mcp)
-- [Set up OpenSEO Agent Skills](https://openseo.so/docs/skills/setup)
-
-## Self-Hosting
-
-OpenSEO supports two self-hosting paths. Both use email and password accounts: the first visitor creates the admin account, teammates join from invitation links, and MCP clients (Claude, ChatGPT, Codex, Cursor) sign in with the same accounts.
-
-- **Docker** - On your own server or computer, with a prebuilt image that is ready in seconds. Works with Compose-based platforms such as Coolify, Portainer and Dokploy. See [`docs/SELF_HOSTING_DOCKER.md`](./docs/SELF_HOSTING_DOCKER.md).
-  - Running the older single-container image? It keeps getting updates; [move to the new setup](./docs/SELF_HOSTING_DOCKER.md#move-from-the-old-docker-image) when you are ready, data included.
-- **Cloudflare** - No server to run: one deploy command puts OpenSEO on your own Cloudflare account (works on the free plan). See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
-
-For security-conscious setups, two advanced options replace the accounts with your own network controls:
-
-- **Cloudflare Access** in front of the Cloudflare deploy, so Cloudflare checks every request before it reaches OpenSEO. See [`docs/SELF_HOSTING_CLOUDFLARE.md`](./docs/SELF_HOSTING_CLOUDFLARE.md).
-- **No sign-in on Docker**, behind Tailscale, a private network or your own authenticating proxy. See [Without sign-in](./docs/SELF_HOSTING_DOCKER.md#without-sign-in-advanced).
-
-Either way, you need a DataForSEO API key to get SEO data. See [`docs/DATAFORSEO_API_KEY.md`](./docs/DATAFORSEO_API_KEY.md).
-
-## Costs
-
-OpenSEO needs a [DataForSEO](https://dataforseo.com/?aff=255379) API key so that you can get SEO data. You pay them directly when self hosting.
-
-See [openseo.so/pricing](https://openseo.so/pricing)
-
-When you self host, your costs will be slightly lower than the estimates on our website. The way the hosted service makes money is by charging 28% extra for every request we make to DataForSEO.
-
-## Local Development
-
-See [`docs/LOCAL_DEVELOPMENT.md`](./docs/LOCAL_DEVELOPMENT.md).
-
-## Contributing
-
-Creating clear issues is the best way to contribute.
-
-Read more here: [`docs/CONTRIBUTING.md`](./docs/CONTRIBUTING.md)
-
-We have this skill: `/simple-issue-description` which helps.
-
-```sh
-npx skills add every-app/open-seo --skill simple-issue-description
+```
+                                  ?????????????????????????????????
+                                  ?      Client Browser / UI      ?
+                                  ?????????????????????????????????
+                                                  ? (LAN / Localhost :3009)
+                                                  ?
+                                  ?????????????????????????????????
+                                  ?        Nginx Web Proxy        ?
+                                  ?????????????????????????????????
+                                                  ?
+                                                  ?
+                                  ?????????????????????????????????
+                                  ?     OpenSEO Core Runtime      ?
+                                  ?       (celld / Workers)       ?
+                                  ?????????????????????????????????
+                                          ?               ?
+                     (Scrape / Context)   ?               ?   (SERP / LLM Requests)
+                                          ?               ?
+                        ?????????????????????????????????????????????
+                        ?       Self-Hosted Bridge Middleware       ?
+                        ?               (Node.js)                   ?
+                        ?????????????????????????????????????????????
+                                  ?                       ?
+                                  ?                       ?
+                    ??????????????????????????  ??????????????????????????
+                    ?   Browserless Engine   ?  ?   SearXNG Metasearch   ?
+                    ?   (Headless Chromium)  ?  ?   + Manifest AI Gateway?
+                    ??????????????????????????  ??????????????????????????
 ```
 
-## Community
+---
 
-Join Discord to chat: [Discord](https://discord.gg/c9uGs3cFXr)
+## ? Features & Workflows
 
-Follow along for updates:
+### 1. Keyword Research & Organic SERP
+- Discover high-intent queries and search volumes powered by local **SearXNG** aggregation.
+- Real-time ranking previews, title tags, descriptions, and snippet extraction with zero API throttling.
 
-- Follow on X: https://x.com/bensenescu
-- Sign up for the mailing list on our website: [openseo.so](https://openseo.so)
+### 2. AI Visibility & Prompt Research
+- Track how AI models (ChatGPT, Claude, Gemini, Perplexity) perceive and cite your domain.
+- Generates natural, context-aware prompt variations and brand mentions using **Manifest AI Gateway**.
+- Resilient JSON normalization and fallback heuristics to eliminate blank results or schema errors.
+
+### 3. Site Audit with Client-Side JavaScript Execution
+- Full SPA crawling (React, Next.js, Vue, Angular, Svelte) via integrated **Headless Chrome**.
+- Evaluates dynamically injected headings, links, internal architectures, and Lighthouse performance scores.
+- Automatic DOM state validation (`loaded`) with direct HTML fallback resilience.
+
+### 4. Agent Skills & MCP Integration
+OpenSEO exposes a native Model Context Protocol (MCP) server so autonomous coding agents can orchestrate your SEO pipeline:
+- Compatible with **Antigravity (AGY)**, **Claude Code**, **OpenClaw**, **Hermes**, and **Codex**.
+- Reusable agent skills for keyword auditing, content briefs, and ranking checks.
+
+---
+
+## ??? Self-Hosting Guide
+
+### Prerequisites
+- Docker Engine & Docker Compose (v2.20+)
+- 4 GB+ RAM recommended (for running the headless browser engine)
+- Linux VPS (Ubuntu 22.04 / 24.04 LTS recommended)
+
+### Quick Start
+
+1. **Clone this repository**:
+   ```bash
+   git clone git@github.com:redwan-cse/open-seo.git
+   cd open-seo/deploy/standalone
+   ```
+
+2. **Configure your environment**:
+   ```bash
+   cp .env.example .env
+   ```
+   Set your local keys:
+   ```env
+   AUTH_MODE=password
+   BETTER_AUTH_URL=http://192.168.10.40:3009
+   PORT=3009
+   STORAGE_ACCESS_KEY=openseo
+   STORAGE_SECRET_KEY=<generate-32-byte-hex>
+
+   # Self-hosted adapters enable full features without paid external accounts:
+   DATAFORSEO_API_KEY=selfhosted-local-bridge
+   CONTEXT_API_KEY=selfhosted-browser-bridge
+   OPENROUTER_API_KEY=local-manifest-key
+   ```
+
+3. **Deploy the stack**:
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Access OpenSEO**:
+   Open your browser at `http://<your-vps-ip>:3009`. The first visitor creates the administrator account!
+
+---
+
+## ?? Automated Upstream Synchronization
+
+This repository uses an autonomous DevOps pipeline powered by the **Google Antigravity (AGY) CLI** and a persistent `systemd` watchdog:
+
+- **Schedule:** Runs every 3 days at 03:00 UTC.
+- **Offline Catch-Up (`Persistent=true`):** If your server is offline or rebooting at the scheduled time, the watchdog automatically executes immediately once the server comes back online.
+- **Permanent Adapter Preservation:** Core self-hosted configurations, bridges, and patches are managed in `seo-platform-infra` and applied dynamically on container boot?so upstream git updates will **never overwrite your self-hosted modules**.
+- **Comprehensive Health Audit:** Inspects OpenSEO API health, SearXNG, Browserless, Bridge, and Manifest AI, recording audit results to `/logs/last_sync.json`.
+
+---
+
+## ?? License & Attribution
+
+- **Base Project:** Copyright (c) 2026 Ben Senescu under the [MIT License](./LICENSE).
+- **Self-Hosted Enhancements:** Maintained by [Md. Redwan Ahmed](https://github.com/redwan-cse).
+- Feel free to fork, adapt, and deploy your own private SEO platform!
