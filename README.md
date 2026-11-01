@@ -1,5 +1,15 @@
 # OpenSEO
 
+> [!NOTE]
+> **OpenSEO Self-Hosted Community Edition** maintained by [Md. Redwan Ahmed](https://github.com/redwan-cse).  
+> **Original Upstream Project:** [every-app/open-seo](https://github.com/every-app/open-seo) created by [Ben Senescu](https://github.com/bensenescu).  
+> **License:** [MIT License](./LICENSE) ? All original copyrights, license terms, and author credits are fully preserved.  
+> 
+> **Self-Hosted Enhancements in this distribution:**
+> - **Zero-Cost DataForSEO Alternative:** Native SearXNG meta-search + Manifest AI Gateway integration (no paid DataForSEO plan needed).
+> - **Self-Hosted JavaScript Rendering:** Headless Chrome (`browserless/chrome`) for dynamic SPA site audits without third-party Context.dev API subscriptions.
+> - **Automated Upstream Sync:** Automated 3-day synchronization tracking upstream stable releases while preserving self-hosted adapters.
+
 > Open source alternative to Semrush and Ahrefs
 
 OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
